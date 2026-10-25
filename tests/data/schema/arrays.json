@@ -1,0 +1,92 @@
+{
+  "axes": {
+    "core": {
+      "a_imag": "paths",
+      "a_real": "paths",
+      "interaction_count": "paths",
+      "interaction_flags": "paths",
+      "link_path_offsets": "links+1",
+      "link_ue_index": "links",
+      "path_rank": "paths",
+      "phi_r": "paths",
+      "phi_t": "paths",
+      "tau": "paths",
+      "theta_r": "paths",
+      "theta_t": "paths"
+    },
+    "detail": {
+      "interaction_rank": "interactions",
+      "interaction_type": "interactions",
+      "interaction_vertex": "interactions,3",
+      "path_interaction_offsets": "paths+1"
+    },
+    "positions": {
+      "bs_positions": "bs,3",
+      "ue_positions": "ues,3"
+    }
+  },
+  "capabilities": {
+    "retained_empty_links": true
+  },
+  "fields": {
+    "core": {
+      "a_imag": "<f4",
+      "a_real": "<f4",
+      "interaction_count": "|u1",
+      "interaction_flags": "<u2",
+      "link_path_offsets": "<i8",
+      "link_ue_index": "<i4",
+      "path_rank": "|u1",
+      "phi_r": "<f4",
+      "phi_t": "<f4",
+      "tau": "<f4",
+      "theta_r": "<f4",
+      "theta_t": "<f4"
+    },
+    "detail": {
+      "interaction_rank": "|u1",
+      "interaction_type": "|i1",
+      "interaction_vertex": "<f4",
+      "path_interaction_offsets": "<i8"
+    },
+    "positions": {
+      "bs_positions": "<f4",
+      "ue_positions": "<f4"
+    }
+  },
+  "layout": {
+    "alignment": {
+      "counts": "interaction_count[j] = path_interaction_offsets[j+1] - path_interaction_offsets[j]",
+      "interactions": "interaction_rank, interaction_type, interaction_vertex share interaction index k",
+      "links": "link_ue_index and link_path_offsets[:-1] share link index i",
+      "paths": "core arrays on axis paths share path index j; detail path j is core path j of the record with the same scene_id, frequency_hz and bs_index (equal path_axis_sha256)"
+    },
+    "index_base": 0,
+    "link_path_offsets": "paths of link i",
+    "offsets": "X_offsets[i]:X_offsets[i+1] (half-open) is the span of element i; X_offsets[0] = 0, X_offsets[-1] = length of the spanned axis, non-decreasing",
+    "path_interaction_offsets": "interactions of path j",
+    "references": {
+      "bs_index": "row of bs_positions in the scene positions record",
+      "interaction_type": "code in schema/interaction-codes.json",
+      "link_ue_index": "row of ue_positions in the scene positions record"
+    },
+    "vectors": "last axis is (x, y, z) in the scene frame"
+  },
+  "metadata_key": "__meta__",
+  "metadata_schema": "wireless.npz-meta",
+  "metadata_version": 2,
+  "path_axis_sha256": "path-axis-v1 (wireless_env_data.codecs.path_axis)",
+  "schema": "wireless.arrays",
+  "units": {
+    "a_imag": "1",
+    "a_real": "1",
+    "bs_positions": "m",
+    "interaction_vertex": "m",
+    "phi_r": "rad",
+    "phi_t": "rad",
+    "tau": "s",
+    "theta_r": "rad",
+    "theta_t": "rad",
+    "ue_positions": "m"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "codes": {
+    "0": "none",
+    "1": "specular_reflection",
+    "2": "diffuse_reflection",
+    "4": "refraction",
+    "8": "diffraction"
+  },
+  "schema": "wireless.interaction-codes.sionna-rt-2.v1",
+  "source": "sionna.rt.InteractionType"
+}

@@ -1,0 +1,81 @@
+{
+  "angles": {
+    "acceptance_comparison": "float32_values_vs_float32_rounded_closed_interval_endpoints",
+    "acceptance_tolerance_rad": 1e-06,
+    "phi": "azimuth_from_positive_x_toward_positive_y",
+    "r": "arrival_at_UE",
+    "t": "departure_at_BS",
+    "theta": "zenith_from_positive_z",
+    "unit": "radian"
+  },
+  "arrays": {
+    "ref": "schema/arrays.json",
+    "sha256": "b0dca55700a55bc1d9c6da84666fe168131355a7f03da0484f117d8bfcac89c1"
+  },
+  "coefficient": {
+    "numeric_representation": "a_real_plus_i_a_imag",
+    "power_expression": "10*log10(a_real^2+a_imag^2)",
+    "power_reference": "unit_coefficient_power_not_dBm_or_RSRP",
+    "source_label": "sionna_rt_scalar_passband",
+    "unit": "dimensionless"
+  },
+  "coordinates": {
+    "frame": "scene_cartesian",
+    "georeferencing": "not_declared",
+    "handedness": "right_handed",
+    "position_unit": "metre",
+    "z_axis": "up"
+  },
+  "delay": {
+    "field": "tau",
+    "meaning": "propagation_delay_not_delay_spread",
+    "unit": "second"
+  },
+  "geometry": {
+    "descriptor": "scene.json",
+    "format": "Mitsuba XML with OBJ meshes"
+  },
+  "identity": {
+    "fields": [
+      "collection_id",
+      "scene_id",
+      "component",
+      "frequency_hz",
+      "bs_index"
+    ],
+    "record_id": "sha256 of canonical identity JSON (sorted keys, separators , and :, UTF-8)",
+    "scene_assets": "positions and geometry have frequency_hz and bs_index null"
+  },
+  "interaction_codes": {
+    "ref": "schema/interaction-codes.json",
+    "sha256": "83238d48813aade18f5c8dd47815b3fbe9603ca366a1c87d7ebdd9be413a0315"
+  },
+  "interaction_flags": {
+    "dtype": "<u2",
+    "encoding": "bitwise_OR_of_1_shifted_left_by_code",
+    "masks": {
+      "1": 2,
+      "2": 4,
+      "4": 16,
+      "8": 256
+    }
+  },
+  "interaction_order": "BS_to_UE",
+  "link_direction": "downlink",
+  "release_profile": {
+    "ref": "schema/release-profile.json",
+    "sha256": "b06acfb9ce30f98557a0c87bda4f1a8985f3e7ccdc05622585fe4b9aaf6f01ba"
+  },
+  "retention": {
+    "interaction_rank": "source slot order, strictly increasing per path; gaps retained",
+    "path_rank": "pre-threshold rank; gaps retained",
+    "ranking": "descending power before threshold",
+    "solver_valid_required": true,
+    "threshold_comparator": ">",
+    "threshold_db": -150,
+    "top_k": 16,
+    "ue_rows": "strictly increasing unique UE indices"
+  },
+  "schema": "wireless.channel-conventions",
+  "version": 2
+}

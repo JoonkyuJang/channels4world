@@ -1,0 +1,132 @@
+[
+ {
+  "name": "minimal",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": true
+ },
+ {
+  "name": "all filters",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"split\": \"train\", \"profiles\": [\"urban\", \"metropolitan\"], \"frequencies_hz\": [3500000000], \"bs_ids\": [0, 7], \"scene_ids\": [\"urban_scene_019234\"]}}",
+  "valid": true
+ },
+ {
+  "name": "detail implies core",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"detail\"]}}",
+  "valid": true
+ },
+ {
+  "name": "no revision",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": true
+ },
+ {
+  "name": "null optional fields",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"split\": null, \"profiles\": null}}",
+  "valid": true
+ },
+ {
+  "name": "no tier",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"components\": [\"core\"]}}",
+  "valid": true
+ },
+ {
+  "name": "wrong format",
+  "text": "{\"format\": \"other\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "version 2",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 2, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "version true",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": true, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "version float",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1.0, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "unknown top field",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}, \"note\": \"hi\"}",
+  "valid": false
+ },
+ {
+  "name": "revision with spaces",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1 rm\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "revision dotdot",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"../x\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "unknown selection field",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"rows\": [1]}}",
+  "valid": false
+ },
+ {
+  "name": "empty components",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": []}}",
+  "valid": false
+ },
+ {
+  "name": "missing components",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\"}}",
+  "valid": false
+ },
+ {
+  "name": "unknown component",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"audio\"]}}",
+  "valid": false
+ },
+ {
+  "name": "bool bs id",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"bs_ids\": [0, true]}}",
+  "valid": false
+ },
+ {
+  "name": "negative bs id",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"bs_ids\": [-1]}}",
+  "valid": false
+ },
+ {
+  "name": "float frequency",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"frequencies_hz\": [3500000000.0]}}",
+  "valid": false
+ },
+ {
+  "name": "exponent frequency",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"frequencies_hz\": [3.5e9]}}",
+  "valid": false
+ },
+ {
+  "name": "path in scene id",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"scene_ids\": [\"../etc\"]}}",
+  "valid": false
+ },
+ {
+  "name": "profiles not a list",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"], \"profiles\": \"urban\"}}",
+  "valid": false
+ },
+ {
+  "name": "duplicate key",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": \"v1.0.0\", \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}, \"release\": \"1.0.0\"}",
+  "valid": false
+ },
+ {
+  "name": "NaN",
+  "text": "{\"format\": \"channels4world.selection\", \"format_version\": 1, \"release\": \"1.0.0\", \"revision\": NaN, \"selection\": {\"tier\": \"small\", \"components\": [\"core\", \"positions\"]}}",
+  "valid": false
+ },
+ {
+  "name": "not an object",
+  "text": "[1, 2]",
+  "valid": false
+ }
+]

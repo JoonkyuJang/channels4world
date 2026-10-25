@@ -1,0 +1,62 @@
+{
+  "generic_interpretation": {
+    "angles": {
+      "phi_fields": [
+        "phi_r",
+        "phi_t"
+      ],
+      "phi_interval": [
+        "-pi-tolerance",
+        "pi+tolerance"
+      ],
+      "theta_fields": [
+        "theta_r",
+        "theta_t"
+      ],
+      "theta_interval": [
+        "-tolerance",
+        "pi+tolerance"
+      ],
+      "tolerance_rad": 1e-06
+    },
+    "delay": {
+      "field": "tau",
+      "inclusive": true,
+      "minimum_seconds": 0
+    },
+    "finite_float_fields": {
+      "core": [
+        "a_imag",
+        "a_real",
+        "phi_r",
+        "phi_t",
+        "tau",
+        "theta_r",
+        "theta_t"
+      ],
+      "detail": [
+        "interaction_vertex"
+      ],
+      "positions": [
+        "bs_positions",
+        "ue_positions"
+      ]
+    },
+    "interaction_codes": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "name": "channels4world.main.top16-nonempty.v1",
+  "release_rules": {
+    "max_paths_per_link": 16,
+    "path_rank_exclusive_upper": 16,
+    "retained_links": "nonempty",
+    "top_k": 16,
+    "zero_link_record": "allowed"
+  },
+  "schema": "channels4world.release-profile",
+  "version": 1
+}

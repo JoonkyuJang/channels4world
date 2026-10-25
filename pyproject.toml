@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "channels4world"
+version = "1.0.0"
+description = "Navigate, select, read and prepare the Channels4World wireless channel dataset"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "COPYRIGHT"]
+maintainers = [{name = "Joonkyu Jang"}]
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pyarrow>=14"]
+keywords = ["wireless", "wireless channel", "ray tracing", "Sionna", "channel modeling",
+            "radio propagation", "dataset", "machine learning"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.urls]
+"Homepage" = "https://cbchae.yonsei.ac.kr/channels4world/"
+Dataset = "https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World"
+"Source" = "https://github.com/JoonkyuJang/channels4world"
+"Documentation" = "https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/guide.md"
+"Issues" = "https://github.com/JoonkyuJang/channels4world/issues"
+
+[project.optional-dependencies]
+torch = ["torch>=2.1"]
+test = ["pytest>=7"]
+
+[project.scripts]
+c4w = "channels4world.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
