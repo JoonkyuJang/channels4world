@@ -8,8 +8,8 @@ build memory-mapped caches; it performs no network transfers.
 
 [Dataset card](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World) ·
 [Download helper](https://cbchae.yonsei.ac.kr/channels4world/download.html) ·
-[Guide](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/guide.md) ·
-[API and CLI](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/api.md)
+[Guide](https://github.com/JoonkyuJang/channels4world/blob/main/docs/guide.md) ·
+[API and CLI](https://github.com/JoonkyuJang/channels4world/blob/main/docs/api.md)
 
 ## Install
 
@@ -123,23 +123,23 @@ c4w.to_cache(selection, "small-npy")
 cache = c4w.open("small-npy")
 ```
 
-Every root opens with the same API. Optional [transforms](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/conventions.md) give
+Every root opens with the same API. Optional [transforms](https://github.com/JoonkyuJang/channels4world/blob/main/docs/conventions.md) give
 complex gains, path powers, delay spreads, baseband coefficients, frequency responses
-and fixed-size padded arrays. A thin [PyTorch adapter](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/guide.md#pytorch) turns a
+and fixed-size padded arrays. A thin [PyTorch adapter](https://github.com/JoonkyuJang/channels4world/blob/main/docs/guide.md#pytorch) turns a
 selection into a dataset for `DataLoader`.
 
 ## Documentation
 
-- [Guide](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/guide.md): downloads, selection, records, geometry, recipes, extraction,
+- [Guide](https://github.com/JoonkyuJang/channels4world/blob/main/docs/guide.md): downloads, selection, records, geometry, recipes, extraction,
   padding and PyTorch.
-- [API and CLI](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/api.md): every public entry point, verification and errors.
-- [Scientific conventions](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/conventions.md): coefficients, delays, antennas and ranks.
+- [API and CLI](https://github.com/JoonkyuJang/channels4world/blob/main/docs/api.md): every public entry point, verification and errors.
+- [Scientific conventions](https://github.com/JoonkyuJang/channels4world/blob/main/docs/conventions.md): coefficients, delays, antennas and ranks.
 - Tutorials on the dataset card, each a page and a runnable notebook:
-  [Read one scene](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/v1.0.0/docs/tutorial-library.md)
-  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/v1.0.0/docs/notebooks/01-read-one-scene-library.ipynb)) and
-  [From channel records to a DataLoader](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/v1.0.0/docs/ml-guide.md)
-  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/v1.0.0/docs/notebooks/03-dataloader.ipynb)).
-- [Development](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/development.md): source layout, tests, building the package and the root format.
+  [Read one scene](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/tutorial-library.md)
+  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/notebooks/01-read-one-scene-library.ipynb)) and
+  [From channel records to a DataLoader](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/ml-guide.md)
+  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/notebooks/03-dataloader.ipynb)).
+- [Development](https://github.com/JoonkyuJang/channels4world/blob/main/docs/development.md): source layout, tests, building the package and the root format.
 
 The [dataset card](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World) holds the full schema, the catalogs
 and NumPy-only instructions.

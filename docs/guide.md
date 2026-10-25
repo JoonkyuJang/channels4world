@@ -282,7 +282,7 @@ processes reopen the root on their own; with spawned workers, use the usual
 returns tensors.
 
 A record holds every retained link of one BS, so most models train on links instead.
-The dataset card's [ML guide](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/v1.0.0/docs/ml-guide.md)
+The dataset card's [ML guide](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/ml-guide.md)
 builds a link-level dataset with train, validation and test scenes, padding, an
 optional cache and a `DataLoader`.
 

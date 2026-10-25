@@ -30,7 +30,7 @@ classifiers = [
 "Homepage" = "https://cbchae.yonsei.ac.kr/channels4world/"
 Dataset = "https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World"
 "Source" = "https://github.com/JoonkyuJang/channels4world"
-"Documentation" = "https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/docs/guide.md"
+"Documentation" = "https://github.com/JoonkyuJang/channels4world/blob/main/docs/guide.md"
 "Issues" = "https://github.com/JoonkyuJang/channels4world/issues"
 
 [project.optional-dependencies]
