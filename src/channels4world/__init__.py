@@ -4,7 +4,7 @@
     ds = c4w.open("/path/to/channels4world")
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 from ._errors import (C4WError, FormatError, InsufficientSpaceError, IntegrityError, NotDownloadedError,
                       NotPublishedError, UnknownIDError)

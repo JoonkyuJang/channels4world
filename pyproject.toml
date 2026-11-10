@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "channels4world"
-version = "1.0.0"
+version = "1.0.1"
 description = "Navigate, select, read and prepare the Channels4World wireless channel dataset"
 readme = "README.md"
 license = "Apache-2.0"
