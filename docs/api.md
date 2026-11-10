@@ -116,6 +116,8 @@ downloaded on one machine.
 HF helpers require publication metadata and a matching download layout. They refuse
 user-created subsets/caches or unpublished roots. Pass the immutable dataset
 revision used for the catalog. Reports check presence; reading verifies contents.
+Commands from `hf_command()` require `huggingface_hub` **1.0+** so repeated `--include`
+patterns are combined. Install or upgrade with `python -m pip install -U "huggingface_hub>=1.0"`.
 
 ## Read arrays, links and geometry
 

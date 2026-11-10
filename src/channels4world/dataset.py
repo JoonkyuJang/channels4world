@@ -476,11 +476,13 @@ class Selection:
         self.bs_ids = None if bs_ids is None else set(_int_list(bs_ids, "base station"))
         wanted = None
         if scene_ids is not None:
-            wanted = [scene_ids] if isinstance(scene_ids, str) else list(scene_ids)
-            unknown = [s for s in wanted if s not in r.scenes]
+            # Snapshot the request once: callers may mutate lists and iterators
+            # cannot be consumed again when exporting the selection as a recipe.
+            scene_ids = [scene_ids] if isinstance(scene_ids, str) else list(scene_ids)
+            unknown = [s for s in scene_ids if s not in r.scenes]
             if unknown:
                 raise UnknownIDError(f"unknown scene(s): {unknown[:5]}")
-            wanted = set(wanted)
+            wanted = set(scene_ids)
         if _scenes is not None:
             ids = _scenes
         else:
@@ -804,7 +806,7 @@ class MissingReport:
         return d
 
     def hf_command(self, revision: str | None = None) -> str:
-        """An ``hf download`` command for exactly the missing files.
+        """An ``hf download`` command for exactly the missing files (huggingface_hub >= 1.0).
 
         Pass the release ``revision`` you downloaded the catalog from, so every file comes from
         the same release.

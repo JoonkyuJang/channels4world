@@ -18,11 +18,14 @@ Requires Python **3.11+**, NumPy **1.26+** and PyArrow **14+**. PyTorch is optio
 ```bash
 python -m pip install channels4world
 python -m pip install "channels4world[torch]"   # with the optional PyTorch adapter
-python -m pip install huggingface_hub           # the hf command, for the downloads below
+python -m pip install -U "huggingface_hub>=1.0" # the hf command, for the downloads below
 ```
 
 Hugging Face's `hf` command or `snapshot_download` fetches the planned files;
 then open the local folder with the library.
+The commands below require `huggingface_hub` **1.0+**: older `hf` versions keep only
+the last repeated `--include` pattern. Upgrade an existing installation with the
+command above before downloading.
 
 ## Quick start: download and read one scene
 

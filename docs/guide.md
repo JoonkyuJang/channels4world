@@ -10,6 +10,10 @@ The [dataset card](https://huggingface.co/datasets/Intelligence-Networking-Lab/C
 has the download commands, the tier and component sizes, the full schema and access
 without the library.
 
+The `hf download` examples and generated commands require `huggingface_hub` **1.0+**
+so repeated `--include` patterns are combined. Upgrade an existing installation with
+`python -m pip install -U "huggingface_hub>=1.0"`; older versions keep only the last pattern.
+
 ### One Tiny scene
 
 Download BS 0 of one scene with the [README's command](../README.md#quick-start-download-and-read-one-scene)
@@ -114,8 +118,10 @@ if report.complete:
 ```
 
 Scenes come in catalog order and channel records in ascending carrier and BS order. A
-requested component that is missing or not hosted is reported, or raises when read;
-iteration never silently drops it.
+selection's `missing()` report lists unavailable requests. Iteration reads channel records
+present in the catalog, so explicitly requested carriers or BS IDs absent from a scene are
+skipped. Missing payloads or requested detail for an existing channel record raise when
+read. Check `selection.missing().complete` before iterating when complete coverage matters.
 
 ### Use only what is downloaded
 

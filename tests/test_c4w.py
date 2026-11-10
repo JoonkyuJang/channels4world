@@ -978,6 +978,36 @@ def test_recipe_roundtrip_and_cli(release, tmp_path, capsys):
     assert cli(["recipe", str(release), "--tier", "tiny", "-o", str(out)]) == 2  # never overwrites
 
 
+def test_recipe_snapshots_scene_id_list(release):
+    ds = c4w.open(release)
+    requested = ["c0", "a0", "a0"]
+    sel = ds.select(scene_ids=requested, split="train", components=("core",))
+    requested[:] = ["b0"]
+
+    assert sel.scene_ids == ["a0"]
+    recipe = sel.to_recipe()
+    # Preserve the original request, including IDs excluded by another filter,
+    # rather than the caller's mutated list or just the selected scene IDs.
+    assert recipe["selection"]["scene_ids"] == ["c0", "a0"]
+    assert ds.select_recipe(recipe).scene_ids == sel.scene_ids
+    recipe["selection"]["scene_ids"].clear()
+    assert sel.to_recipe()["selection"]["scene_ids"] == ["c0", "a0"]
+
+
+def test_recipe_materializes_scene_id_generator_once(release):
+    ds = c4w.open(release)
+    requested = (s for s in ["c0", "a0", "a0"])
+    sel = ds.select(scene_ids=requested, components=("core",))
+
+    assert list(requested) == []
+    assert sel.scene_ids == ["a0", "c0"]
+    recipe = sel.to_recipe()
+    assert recipe["selection"]["scene_ids"] == ["c0", "a0"]
+    assert sel.to_recipe() == recipe
+    assert ds.select_recipe(recipe).scene_ids == sel.scene_ids
+    assert ds.select(scene_ids="a0", components=("core",)).to_recipe()["selection"]["scene_ids"] == ["a0"]
+
+
 def test_recipe_missing_command_uses_its_revision(tmp_path, capsys):
     root = make_release(tmp_path / "c4w", hf_repo="org/C4W", hf_path="")
     (root / "payload/main/3.5ghz/core/inc-small/test/g-c-3.5ghz-core.tar").unlink()
