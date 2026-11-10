@@ -157,6 +157,7 @@ Copyright 2026 Joonkyu Jang. Maintained by **Joonkyu Jang**; see
 [COPYRIGHT](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/COPYRIGHT).
 
 The software is **Apache-2.0**; see [LICENSE](https://github.com/JoonkyuJang/channels4world/blob/v1.0.0/LICENSE).
-The Channels4World data is separately **CC BY 4.0**. For data attribution and the
-submitted dataset-paper citation (arXiv preprint pending), see the
+The Channels4World data is separately **CC BY 4.0**. Please cite the
+[Channels4World dataset paper on arXiv](https://arxiv.org/abs/2611.11428)
+(arXiv:2611.11428, 2026). For BibTeX and data attribution, see the
 [dataset card](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World#license-and-citation).
