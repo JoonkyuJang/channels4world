@@ -32,6 +32,7 @@ Dataset = "https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4
 "Source" = "https://github.com/JoonkyuJang/channels4world"
 "Documentation" = "https://github.com/JoonkyuJang/channels4world/blob/main/docs/guide.md"
 "Issues" = "https://github.com/JoonkyuJang/channels4world/issues"
+"Paper" = "https://arxiv.org/abs/2611.11428"
 
 [project.optional-dependencies]
 torch = ["torch>=2.1"]
