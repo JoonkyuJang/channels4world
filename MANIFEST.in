@@ -2,4 +2,6 @@
 # schema fixtures) and the documentation, so it can be checked as released.
 graft tests
 graft docs
+graft examples
+graft tutorials-src
 global-exclude __pycache__ *.py[cod]

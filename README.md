@@ -6,10 +6,12 @@ helps you select, read and prepare those records locally. It plans downloads,
 reads values and dtypes as read-only NumPy arrays, and can extract subsets or
 build memory-mapped caches; it performs no network transfers.
 
+[Project website](https://cbchae.yonsei.ac.kr/channels4world/) ·
 [Dataset card](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World) ·
 [Download helper](https://cbchae.yonsei.ac.kr/channels4world/download.html) ·
 [Guide](https://github.com/JoonkyuJang/channels4world/blob/main/docs/guide.md) ·
-[API and CLI](https://github.com/JoonkyuJang/channels4world/blob/main/docs/api.md)
+[API and CLI](https://github.com/JoonkyuJang/channels4world/blob/main/docs/api.md) ·
+[Examples](https://github.com/JoonkyuJang/channels4world/tree/main/examples)
 
 ## Install
 
@@ -137,11 +139,13 @@ selection into a dataset for `DataLoader`.
   padding and PyTorch.
 - [API and CLI](https://github.com/JoonkyuJang/channels4world/blob/main/docs/api.md): every public entry point, verification and errors.
 - [Scientific conventions](https://github.com/JoonkyuJang/channels4world/blob/main/docs/conventions.md): coefficients, delays, antennas and ranks.
-- Tutorials on the dataset card, each a page and a runnable notebook:
-  [Read one scene](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/tutorial-library.md)
-  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/notebooks/01-read-one-scene-library.ipynb)) and
-  [From channel records to a DataLoader](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/ml-guide.md)
-  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/notebooks/03-dataloader.ipynb)).
+- Runnable [examples](https://github.com/JoonkyuJang/channels4world/tree/main/examples), maintained with the library:
+  [Read one scene](https://github.com/JoonkyuJang/channels4world/blob/main/docs/tutorial-library.md)
+  ([notebook](https://github.com/JoonkyuJang/channels4world/blob/main/examples/01-read-one-scene-library.ipynb)) and
+  [From channel records to a DataLoader](https://github.com/JoonkyuJang/channels4world/blob/main/docs/ml-guide.md)
+  ([notebook](https://github.com/JoonkyuJang/channels4world/blob/main/examples/02-dataloader.ipynb)).
+- [Pure NumPy example](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/tutorial-numpy.md)
+  ([notebook](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World/blob/main/docs/notebooks/02-read-one-scene-numpy.ipynb)) on the dataset card.
 - [Development](https://github.com/JoonkyuJang/channels4world/blob/main/docs/development.md): source layout, tests, building the package and the root format.
 
 The [dataset card](https://huggingface.co/datasets/Intelligence-Networking-Lab/Channels4World) holds the full schema, the catalogs

@@ -1,0 +1,6 @@
+huggingface_hub>=1.0
+matplotlib>=3.8
+nbformat>=5.9
+nbclient>=0.9
+ipykernel>=6
+datasets>=2.20

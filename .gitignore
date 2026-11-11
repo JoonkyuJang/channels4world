@@ -6,3 +6,7 @@ dist/
 .pytest_cache/
 .venv/
 .DS_Store
+examples/c4w/
+examples/cache/
+examples/splits.json
+.ipynb_checkpoints/

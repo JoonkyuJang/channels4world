@@ -42,6 +42,14 @@ and 3.14 with current releases; the PyTorch tests are skipped when PyTorch is no
 TARs of NPZ and ZIP members, group catalogs and snapshots, the public schema documents and
 a release root. Keep fixtures with the tests.
 
+## Tutorials
+
+Runnable examples live in `examples/`, with readable pages in `docs/`. Their cells
+are maintained once in `tutorials-src/build_tutorials.py`; regenerate them rather
+than editing outputs. See [tutorial maintenance](../tutorials-src/README.md) for
+optional dependencies, link checks and offline notebook execution checks. The
+NumPy-only example is published on the dataset card from the same source.
+
 ## Building the package
 
 ```bash
@@ -52,8 +60,9 @@ python -m venv /tmp/c4w-clean && /tmp/c4w-clean/bin/pip install dist/*.whl pytes
 tar -xzf dist/*.tar.gz -C /tmp && /tmp/c4w-clean/bin/python -m pytest /tmp/channels4world-*/tests
 ```
 
-The sdist carries the tests (with their synthetic-release helper and fixtures) and these
-docs, so the last line checks the installed wheel without the source tree on the path.
+The sdist carries the tests (with their synthetic-release helper and fixtures), these
+docs, examples and tutorial sources, so the last line checks the installed wheel
+without the source tree on the path.
 
 ## Root format and versions
 
